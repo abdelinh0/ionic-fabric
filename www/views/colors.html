@@ -1,0 +1,12 @@
+<ion-popover-view>
+  <ion-content>
+    <div>
+      <button class="button button-icon ion-record"
+              ng-repeat="color in colors"
+              style="color: {{color.color}}; font-size: 36.5px"
+              ng-click="changeBrushColor(color.color)">
+      </button>
+    </div>
+
+  </ion-content>
+</ion-popover-view>

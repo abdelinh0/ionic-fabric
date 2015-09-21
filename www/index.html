@@ -31,13 +31,22 @@
     <ion-header-bar class="bar-stable">
       <h1 class="title">Draw</h1>
       <div class="buttons">
-        <button class="button button-icon ion-record" ng-repeat="color in colors" style="color: {{color.color}}" ng-click="changeColor(color.color)"></button>
-        <button class="button button-icon ion-reply" ng-click="undo()"></button>
+        <button class="button button-clear" ng-click="saveDrawing()">Save</button>
       </div>
     </ion-header-bar>
     <ion-content scroll="false">
-      <canvas id="c" width="{{width}}" height="{{height}}"></canvas>
+      <canvas id="c"></canvas>
     </ion-content>
+
+    <ion-footer-bar class="bar-stable">
+      <div class="title">
+        <button class="button button-clear" style="color: {{brushcolor}}" ng-click="addText()">Aa</button>
+        <button class="button button-icon ion-paintbrush" ng-click="drawingMode()"></button>
+        <button class="button button-icon ion-android-color-palette" style="color: {{brushcolor}}" ng-if="showColorPaletteIcon" ng-click="openColorsPopover($event)"></button>
+        <button class="button button-icon ion-ios-undo" ng-click="undoLastObject()"></button>
+      </div>
+    </ion-footer-bar>
+
   </ion-pane>
 </body>
 
